@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-planetary-system-heading" jhiTranslate="herokuDemo2App.planetary_system.home.createOrEditLabel">Create or edit a Planetary System</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="herokuDemo2App.planetary_system.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="herokuDemo2App.planetary_system.star" for="field_star">Star</label>
+                    <input type="text" class="form-control" name="star" id="field_star"
+                           formControlName="star"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="herokuDemo2App.planetary_system.galaxy" for="field_galaxy">Galaxy</label>
+                    <input type="text" class="form-control" name="galaxy" id="field_galaxy"
+                           formControlName="galaxy"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="herokuDemo2App.planetary_system.galaxy_re" for="field_galaxy_re">Galaxy Re</label>
+                    <select class="form-control" id="field_galaxy_re" name="galaxy_re" formControlName="galaxy_re">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="galaxyOption.id === editForm.get('galaxy_re').value?.id ? editForm.get('galaxy_re').value : galaxyOption" *ngFor="let galaxyOption of galaxies; trackBy: trackGalaxyById">{{galaxyOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

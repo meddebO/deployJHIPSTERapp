@@ -1,0 +1,35 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "galaxy_re",
+            "otherEntityName": "galaxy",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "star",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "galaxy",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190917115746",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "planetary_system",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}

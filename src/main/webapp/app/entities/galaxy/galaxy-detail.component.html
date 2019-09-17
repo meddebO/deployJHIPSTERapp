@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="galaxy">
+            <h2><span jhiTranslate="herokuDemo2App.galaxy.detail.title">Galaxy</span> {{galaxy.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="herokuDemo2App.galaxy.name">Name</span></dt>
+                <dd>
+                    <span>{{galaxy.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="herokuDemo2App.galaxy.type">Type</span></dt>
+                <dd>
+                    <span>{{galaxy.type}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/galaxy', galaxy.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

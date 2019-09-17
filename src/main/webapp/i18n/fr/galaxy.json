@@ -1,0 +1,23 @@
+{
+  "herokuDemo2App": {
+    "galaxy": {
+      "home": {
+        "title": "Galaxies",
+        "createLabel": "Créer un nouveau Galaxy",
+        "createOrEditLabel": "Créer ou éditer un Galaxy",
+        "notFound": "Aucun Galaxy trouvé"
+      },
+      "created": "Un nouveau Galaxy a été créé avec l'identifiant {{ param }}",
+      "updated": "Le Galaxy avec l'identifiant {{ param }} a été mis à jour",
+      "deleted": "Le Galaxy avec l'identifiant {{ param }} a été supprimé",
+      "delete": {
+        "question": "Etes-vous certain de vouloir supprimer le Galaxy {{ id }} ?"
+      },
+      "detail": {
+        "title": "Galaxy"
+      },
+      "name": "Name",
+      "type": "Type"
+    }
+  }
+}
